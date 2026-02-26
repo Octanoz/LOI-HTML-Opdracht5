@@ -4,33 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotoGP fanpagina</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>MotoGP-fans hoofdpagina</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- afbeelding met transparante balk, smaller dan schermbreedte -->
-    <header>
+    <header class="full-width">
+        <!-- Afbeelding met transparante balk, smaller dan schermbreedte -->
         <!-- Links logo, rechts navigatie -->
-        <nav>
-            <div class="logo">
-                <a class="home-link" href="index.html" aria-label="Terug naar homepage">
-                    <span class="material-icons">sports_motorsports</span>
-                    <span class="logo-text">MotoGP<span class="logo-sub">-Fans</span></span>
-                </a>
-            </div>
+        <nav class="blur-bg">
+            <a class="material-icons" href="index.html">sports_motorsports</a>
             <ul class="nav-items">
                 <li class="nav-checked"><a href="index.html">Home</a></li>
-                <li><a href="fotos.html">Foto's</a></li>
+                <li><a href="circuits.html">Circuits</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="kampioenen.html">Kampioenen</a></li>
             </ul>
         </nav>
         <!-- Hoofdkop en subkop -->
         <div class="hero">
-            <h1>Moto<span class="italic">GP</span>-Fans</h1>
-            <p class="italic">D&eacute; plek voor MotoGP liefhebbers</p>
+            <img src="images/action/Motorcycle-Physics-Cornering.webp" alt="MotoGP coureur in actie tijdens een race"
+                class="hero-image">
+            <h1 class="blur-bg">Moto<span class="italic">GP</span>-Fans</h1>
+            <p class="italic blur-bg">D&eacute; plek voor MotoGP liefhebbers</p>
         </div>
     </header>
 
@@ -63,21 +60,27 @@
                 <p>Miljoenen fans</p>
             </div>
         </section>
-        <!-- gradient block hard limit 1/3 -->
+        <!-- Gradient block hard limit 1/3 -->
         <section class="gradient-block">
             <!-- Gecentreerde inhoud met links teks en knop en rechts een kop met afbeelding en een link -->
             <div class="call-to-action-block">
                 <div class="action-block-left">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odit nisi dignissimos beatae
-                        accusantium, porro praesentium debitis eveniet cumque earum deleniti soluta atque suscipit.
-                        Pariatur ad amet repudiandae neque saepe?
-                        Expedita cupiditate nulla, eum obcaecati optio provident a ea eveniet sit atque quaerat eos
-                        dicta! Maiores deleniti exercitationem laboriosam repudiandae, maxime libero officia vitae, rem,
-                        aspernatur voluptates natus cum dolores.
+                    <h2>Geschiedenis van de MotoGP</h2>
+                    <p>Grand Prix motorraces worden gereguleerd door de FIM, de internationale
+                        motorfederatie. Deze organisatie heeft diverse herstarts doorgemaakt sinds de eerste oprichting
+                        in 1904 aangezien deelnemende landen in het begin meer bezig waren met winnen dan een eerlijke
+                        race. Sinds eind jaren 40 is er een hoop veranderd.
+                        De FIM kreeg gaandeweg meer zeggenschap over de regels en de veiligheid van de races
+                        en was ook de organisator van de grands prix. In 1992 werd Dorna Sports de promotor en
+                        organisator van de races en werd de naam van het kampioenschap
+                        veranderd in MotoGP.
                     </p>
+                    <a href="https://nl.wikipedia.org/wiki/Wereldkampioenschap_wegrace#mwIA" target="_blank"
+                        rel="noopener noreferrer">Meer geschiedenis</a>
                 </div>
-                <div class="action-block-right"></div>
+                <div class="action-block-right">
+                    <img src="images/history/Riders-on-the-grid-1975.webp" alt="Een start van een race in 1975">
+                </div>
             </div>
         </section>
         <!-- Blok tekst / afbeelding -->
@@ -91,13 +94,13 @@
                     Van het iconische Mugello in Itali&euml; tot het Circuit of the Americas in de Verenigde Staten.
                     MotoGP racet over de hele wereld op legendarische circuits.
                 </p>
-                <a class="halves-link" href="http://motogp.com/calendar" target="_blank" rel="noopener">Kalender</a>
+                <a class="button-link" href="http://motogp.com/calendar" target="_blank" rel="noopener">Kalender</a>
             </div>
         </section>
         <!-- Blok afbeelding / tekst -->
         <section class="two-halves">
             <div class="image-half">
-                <img src="images/technology.jpg" alt="Foto van een MotoGP motor">
+                <img src="images/tech/DUCATI DESMOSEDICI GP6 ENGINE.jpg" alt="Foto van een MotoGP motor">
             </div>
             <div class="text-half">
                 <h2>De nieuwste technologie</h2>
@@ -105,14 +108,14 @@
                     MotoGP motoren vertegenwoordigen het toppunt van motorsporttechnologie, met geavanceerde
                     aerodynamica, elektronica en materialen die de grenzen van snelheid en prestaties verleggen.
                 </p>
-                <a class="halves-link" href="http://motogp.com/news" target="_blank" rel="noopener">MotoGP
+                <a class="button-link" href="http://motogp.com/news" target="_blank" rel="noopener">MotoGP
                     nieuws</a>
             </div>
         </section>
         <!-- Blok tekst / afbeelding -->
         <section class="two-halves">
             <div class="image-half">
-                <img src="images/riders.jpg" alt="Foto van MotoGP coureurs op de grid">
+                <img src="images/circuits/line-up.jpg" alt="Foto van MotoGP coureurs op de grid">
             </div>
             <div class="text-half">
                 <h2>De beste coureurs</h2>
@@ -120,7 +123,7 @@
                     Van legendarische kampioenen zoals Valentino Rossi en Marc Marquez tot opkomende sterren, de
                     coureurs van MotoGP zijn de helden van de sport en inspireren miljoenen fans over de hele wereld.
                 </p>
-                <a class="halves-link" href="http://motogp.com/riders" target="_blank" rel="noopener">Coureurs</a>
+                <a class="button-link" href="http://motogp.com/riders" target="_blank" rel="noopener">Coureurs</a>
             </div>
         </section>
         <!-- Lijst met stijl, smallere inhoud -->
