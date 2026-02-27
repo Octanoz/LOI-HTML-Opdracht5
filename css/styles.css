@@ -244,6 +244,7 @@
 
     nav ul {
         display: flex;
+        flex-wrap: wrap;
         gap: 4vw;
         margin-block-start: var(--spacer-small);
     }
