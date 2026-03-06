@@ -72,7 +72,7 @@
         outline-offset: var(--spacer-min);
     }
 
-    /* layout */
+    /* main layout */
     body {
         display: grid;
         grid-template-columns: 1fr min(var(--max-width), calc(100svw - var(--spacer))) 1fr;
@@ -143,6 +143,14 @@
         grid-column: 1 / -1;
     }
 
+    footer {
+        padding: var(--spacer);
+        background: var(--footer-bg);
+        color: var(--secondary-color);
+        text-align: end;
+    }
+
+    /* main page */
     .feature-container {
         position: relative;
         display: flex;
@@ -194,12 +202,14 @@
         flex: 0 1 220px;
     }
 
-    footer {
-        padding: var(--spacer);
-        background: var(--footer-bg);
-        color: var(--secondary-color);
-        text-align: end;
+    /* gallery page */
+    .bento-container {
+        container: bento / inline-size;
     }
+
+    /* contact page */
+
+    /* champions page */
 }
 
 @layer typography {
@@ -208,7 +218,6 @@
         font-family: 'Allerta Stencil', 'Times New Roman', serif;
         font-size: 3rem;
         font-weight: bold;
-        text-align: center;
         margin: 6rem auto 1rem;
         background: var(--accent-1-transparent);
     }
@@ -223,7 +232,6 @@
         font-weight: bold;
         margin-inline: auto;
         padding: var(--spacer-small) var(--spacer-xl);
-        text-align: center;
         color: var(--secondary-color);
         background: var(--secondary-bg-transparent);
     }
@@ -272,9 +280,9 @@
         margin-right: .5em;
     }
 
+    /* main page */
     .feature-card {
         flex: 1 1 200px;
-        text-align: center;
         padding: var(--spacer);
         border-radius: var(--card-radius);
         background: var(--primary-bg);
@@ -324,7 +332,6 @@
     .card {
         display: grid;
         grid-template-rows: 200px 1fr;
-        /* border: 1px solid var(--grey); */
         border-radius: var(--card-radius);
         contain: paint;
     }
@@ -340,6 +347,122 @@
         color: var(--secondary-color);
         background: linear-gradient(125deg, var(--secondary-bg) 50%, var(--accent-1) 0);
     }
+
+    /* gallery page */
+    .circuit-card {
+        border-radius: var(--card-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .circuit-grid {
+        display: grid;
+        grid-template-columns:
+            .5rem 1fr 1fr .5rem;
+        grid-auto-rows: 200px;
+        justify-content: center;
+        gap: 1rem;
+        grid-template-areas:
+            ". one two ."
+            ". three four ."
+            ". five six ."
+            ". seven eight ."
+            ". nine ten ."
+            ". eleven twelve ."
+            ". thirteen fourteen ."
+            ". fifteen sixteen ."
+            ". seventeen eighteen ."
+            ". nineteen twenty ."
+            ". twenty-one twenty-two .";
+    }
+
+    .one {
+        grid-area: one;
+    }
+
+    .two {
+        grid-area: two;
+    }
+
+    .three {
+        grid-area: three;
+    }
+
+    .four {
+        grid-area: four;
+    }
+
+    .five {
+        grid-area: five;
+    }
+
+    .six {
+        grid-area: six;
+    }
+
+    .seven {
+        grid-area: seven;
+    }
+
+    .eight {
+        grid-area: eight;
+    }
+
+    .nine {
+        grid-area: nine;
+    }
+
+    .ten {
+        grid-area: ten;
+    }
+
+    .eleven {
+        grid-area: eleven;
+    }
+
+    .twelve {
+        grid-area: twelve;
+    }
+
+    .thirteen {
+        grid-area: thirteen;
+    }
+
+    .fourteen {
+        grid-area: fourteen;
+    }
+
+    .fifteen {
+        grid-area: fifteen;
+    }
+
+    .sixteen {
+        grid-area: sixteen;
+    }
+
+    .seventeen {
+        grid-area: seventeen;
+    }
+
+    .eighteen {
+        grid-area: eighteen;
+    }
+
+    .nineteen {
+        grid-area: nineteen;
+    }
+
+    .twenty {
+        grid-area: twenty;
+    }
+
+    .twenty-one {
+        grid-area: twenty-one;
+    }
+
+    .twenty-two {
+        grid-area: twenty-two;
+    }
 }
 
 @layer utilities {
@@ -349,6 +472,10 @@
 
     .horizontal-reversed {
         scale: -1 1;
+    }
+
+    .text-center {
+        text-align: center;
     }
 
     .blur-bg {
@@ -382,7 +509,9 @@ nav a.material-icons {
     color: white;
 }
 
-@media (min-width: 768px) {
+@media (width >=768px) {
+
+    /* main page */
     .two-halves {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -399,7 +528,24 @@ nav a.material-icons {
         grid-row: 2;
     }
 
-
+    /* gallery page */
+    .circuit-grid {
+        grid-template-columns:
+            .5rem repeat(5, 1fr) .5rem;
+        grid-auto-rows: 400px;
+        grid-template-areas:
+            ". one one one two two ."
+            ". three three four four four ."
+            ". five five five six six ."
+            ". seven seven eight eight eight ."
+            ". nine nine nine ten ten ."
+            ". eleven eleven twelve twelve twelve ."
+            ". thirteen thirteen thirteen fourteen fourteen ."
+            ". fifteen fifteen sixteen sixteen sixteen ."
+            ". seventeen seventeen seventeen eighteen eighteen ."
+            ". nineteen nineteen twenty twenty twenty ."
+            ". twenty-one twenty-one twenty-one twenty-two twenty-two .";
+    }
 }
 
 @media (min-width: 1440px) {
