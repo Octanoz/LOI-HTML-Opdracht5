@@ -161,13 +161,11 @@
 
     .gradient-block {
         padding-block: var(--spacer-large);
-        background: linear-gradient(90deg, var(--grey) 33%, var(--primary-bg) 0);
         background: linear-gradient(90deg, var(--grey) 33%, var(--accent-2) 0);
     }
 
     .reversed-gradient-block {
         padding-block: var(--spacer-large);
-        background: linear-gradient(90deg, var(--primary-bg) 66%, var(--grey) 0);
         background: linear-gradient(90deg, var(--accent-2) 66%, var(--grey) 0);
     }
 
@@ -352,6 +350,7 @@
     .circuit-card {
         position: relative;
         border-radius: var(--card-radius);
+        background: url(/images/circuits/circuit_not_found_mai.jpg) center / cover;
         overflow: hidden;
         box-shadow: var(--box-shadow);
     }
@@ -368,7 +367,7 @@
             .5rem 1fr 1fr .5rem;
         grid-auto-rows: 200px;
         justify-content: center;
-        gap: 1rem;
+        gap: var(--spacer-small);
         grid-template-areas:
             ". one two ."
             ". three four ."
@@ -471,27 +470,11 @@
             grid-area: twenty-two;
         }
     }
-
-    .overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: var(--spacer);
-        color: white;
-        text-shadow: 2px 2px 2px var(--primary-color);
-        background: var(--secondary-bg-transparent);
-    }
 }
 
 @layer utilities {
     .italic {
         font-style: italic;
-    }
-
-    .horizontal-reversed {
-        scale: -1 1;
     }
 
     .text-center {
@@ -521,6 +504,18 @@
         background: var(--primary-bg);
         scale: 1.1;
         transition: scale 0.3s ease;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: var(--spacer);
+        color: white;
+        text-shadow: 2px 2px 2px var(--primary-color);
+        background: var(--secondary-bg-transparent);
     }
 }
 
