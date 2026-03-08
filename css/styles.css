@@ -366,8 +366,6 @@
         grid-template-columns:
             .5rem 1fr 1fr .5rem;
         grid-auto-rows: 200px;
-        justify-content: center;
-        gap: var(--spacer-small);
         grid-template-areas:
             ". one two ."
             ". three four ."
@@ -380,99 +378,38 @@
             ". seventeen eighteen ."
             ". nineteen twenty ."
             ". twenty-one twenty-two .";
+        justify-content: center;
+        gap: var(--spacer-small);
         margin-block: var(--spacer);
+    }
 
-        .one {
-            grid-area: one;
-        }
+    /* variable set using inline style HTML to avoid 22 separate selectors in CSS */
+    .circuit-grid>div {
+        grid-area: var(--area);
+    }
 
-        .two {
-            grid-area: two;
-        }
+    /* contact page */
+    .contact-form-container {
+        display: grid;
+        padding: var(--spacer);
+        background: var(--accent-2);
+    }
 
-        .three {
-            grid-area: three;
-        }
+    form {
+        margin-block: var(--spacer);
+    }
 
-        .four {
-            grid-area: four;
-        }
-
-        .five {
-            grid-area: five;
-        }
-
-        .six {
-            grid-area: six;
-        }
-
-        .seven {
-            grid-area: seven;
-        }
-
-        .eight {
-            grid-area: eight;
-        }
-
-        .nine {
-            grid-area: nine;
-        }
-
-        .ten {
-            grid-area: ten;
-        }
-
-        .eleven {
-            grid-area: eleven;
-        }
-
-        .twelve {
-            grid-area: twelve;
-        }
-
-        .thirteen {
-            grid-area: thirteen;
-        }
-
-        .fourteen {
-            grid-area: fourteen;
-        }
-
-        .fifteen {
-            grid-area: fifteen;
-        }
-
-        .sixteen {
-            grid-area: sixteen;
-        }
-
-        .seventeen {
-            grid-area: seventeen;
-        }
-
-        .eighteen {
-            grid-area: eighteen;
-        }
-
-        .nineteen {
-            grid-area: nineteen;
-        }
-
-        .twenty {
-            grid-area: twenty;
-        }
-
-        .twenty-one {
-            grid-area: twenty-one;
-        }
-
-        .twenty-two {
-            grid-area: twenty-two;
-        }
+    fieldset {
+        text-align: center;
+        padding: var(--spacer);
     }
 }
 
 @layer utilities {
+    .flow>*+* {
+        margin-top: var(--spacer);
+    }
+
     .italic {
         font-style: italic;
     }
