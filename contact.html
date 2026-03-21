@@ -22,7 +22,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="circuits.html">Circuits</a></li>
                 <li class="nav-checked"><a href="contact.html">Contact</a></li>
-                <li><a href="kampioenen.html">Kampioenen</a></li>
+                <li><a href="champions.html">Kampioenen</a></li>
             </ul>
         </nav>
         <!-- Hoofdkop en subkop -->
@@ -36,7 +36,7 @@
 
     <main>
         <!-- Contactformulier -->
-        <section class="contact-form reduced-width">
+        <section class="contact-form">
             <h2 class="text-center">Wordt vandaag lid van MotoGP-Fans</h2>
             <form action="submit_form.php" method="post" class="contact-form-container flow">
                 <label for="name">Naam:</label>
@@ -47,14 +47,22 @@
 
                 <fieldset>
                     <legend>Interesse in aanbiedingen:</legend>
-                    <input type="radio" id="deals-no" name="deals-no" value="no" checked>
-                    <label for="deals-no">Nee</label>
-                    <input type="radio" id="netherlands" name="deals-nl" value="netherlands">
-                    <label for="netherlands">Assen</label>
-                    <input type="radio" id="germany" name="deals-de" value="germany">
-                    <label for="germany">Sachsenring</label>
-                    <input type="radio" id="both" name="deals-both" value="both">
-                    <label for="both">Beide</label>
+                    <div class="radio-option">
+                        <input type="radio" id="deals-no" name="deals" value="no" checked>
+                        <label for="deals-no">Nee</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nederland" name="deals" value="nederland">
+                        <label for="nederland">Assen</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="duitsland" name="deals" value="duitsland">
+                        <label for="duitsland">Sachsenring</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="beide" name="deals" value="beide">
+                        <label for="beide">Beide</label>
+                    </div>
                 </fieldset>
 
                 <label for="message">Verdere opmerkingen:</label>
@@ -73,6 +81,19 @@
         <section class="reversed-gradient-block">
             <!-- Google Maps embed -->
             <h2 class="text-center">Hier vindt u ons kantoor</h2>
+            <iframe width="425" height="350"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=6.506609916687012%2C52.95420988461848%2C6.5339040756225595%2C52.96531295896227&amp;layer=mapnik">
+            </iframe>
+            <small>
+                <a href="https://www.openstreetmap.org/?#map=16/52.95976/6.52026&amp;layers=N">Grotere kaart</a>
+            </small>
+            <div class="embed-map-responsive">
+                <div class="embed-map-container">
+                    <iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?q=TT%20circuit%20Assen&t=m&z=11&ie=UTF8&iwloc=B&output=embed"></iframe>
+                    <a href="https://embed-maps.org">how to add google maps to my website</a>
+                </div>
+            </div>
         </section>
     </main>
 

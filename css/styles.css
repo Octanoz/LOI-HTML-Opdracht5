@@ -208,6 +208,71 @@
     /* contact page */
 
     /* champions page */
+    .champions-container {
+        position: relative;
+        margin: 0 auto;
+        padding: var(--spacer-xxl) 0 10em;
+    }
+
+    .champions-container article {
+        position: relative;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rider-card {
+        position: absolute;
+        inline-size: 350px;
+        padding: var(--spacer-xl);
+        border-radius: var(--card-radius);
+        background: oklch(100% 0.00011 271 / 0.1);
+        box-shadow: var(--box-shadow);
+        transform-origin: center center;
+        animation: riderCardScale 1s ease-out forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 60%;
+    }
+
+    .rider-card img {
+        border-radius: var(--card-radius);
+    }
+
+    .timeline-line {
+        position: fixed;
+        inset: 0 auto 0 50%;
+        width: 4px;
+        background: linear-gradient(to bottom,
+                oklch(from var(--accent-1-light) l c h / .2),
+                oklch(from var(--accent-1) l c h / .6),
+                oklch(from var(--accent-1-light) l c h / .2));
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .dot {
+        position: absolute;
+        inset: auto 50% auto 50%;
+        width: 20px;
+        height: 20px;
+        background: #ff0000;
+        border-radius: 50%;
+        transform: translate(-50%) scale(0);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        z-index: 10;
+        animation: dotPulse 1s ease-out forwards;
+        animation-timeline: view();
+        animation-range: entry 20% cover 50%;
+    }
+
+    .rider-card.left {
+        right: calc(50% + 60px);
+    }
+
+    .rider-card.right {
+        left: calc(50% + 60px);
+    }
 }
 
 @layer typography {
@@ -322,6 +387,18 @@
         padding: var(--spacer);
     }
 
+    .two-halves .image-half {
+        min-height: 450px;
+        height: clamp(450px, 80vw, 600px);
+        contain: paint;
+    }
+
+    .two-halves .image-half img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .reduced-width ul {
         list-style: disc inside;
         margin-block: var(--spacer);
@@ -397,11 +474,16 @@
 
     form {
         margin-block: var(--spacer);
+        border: 1px solid var(--grey);
+        border-radius: var(--spacer-small);
     }
 
     fieldset {
-        text-align: center;
         padding: var(--spacer);
+    }
+
+    fieldset label {
+        margin-inline-start: var(--spacer-small);
     }
 }
 
@@ -461,6 +543,19 @@ nav a.material-icons {
     color: white;
 }
 
+@media (width >=500px) {
+
+    /* contact page */
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    .contact-form>* {
+        grid-column: 2;
+    }
+}
+
 @media (width >=768px) {
 
     /* main page */
@@ -498,6 +593,12 @@ nav a.material-icons {
             ". nineteen nineteen twenty twenty twenty ."
             ". twenty-one twenty-one twenty-one twenty-two twenty-two .";
     }
+
+    /* contact page */
+    fieldset {
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 @media (width >=1000px) {
@@ -520,5 +621,23 @@ nav a.material-icons {
 @media (min-width: 1440px) {
     body .full-width {
         grid-column: 2;
+    }
+}
+
+@keyframes riderCardScale {
+    from {
+        opacity: 0;
+        transform: scale(0.25);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes dotPulse {
+    to {
+        transform: translateX(-50%)scale(1);
     }
 }
