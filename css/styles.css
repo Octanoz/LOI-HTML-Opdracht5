@@ -20,7 +20,7 @@
 
     img {
         display: block;
-        max-width: 100%;
+        max-inline-size: 100%;
     }
 }
 
@@ -107,7 +107,7 @@
 
     .hero {
         position: relative;
-        height: 50vh;
+        min-block-size: clamp(16rem, 50svh, 32rem);
         background: var(--grey);
         padding-block: var(--spacer-xxl) calc(var(--spacer-xxl) * 2);
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -117,8 +117,8 @@
     .hero-image {
         position: absolute;
         inset: 0 auto;
-        height: 100%;
-        width: 100%;
+        block-size: 100%;
+        inline-size: 100%;
         object-fit: cover;
     }
 
@@ -127,17 +127,6 @@
         position: relative;
         z-index: 1;
     }
-
-    /* .hero {
-        display: grid;
-        grid-template-areas: "stack";
-        place-items: center;
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    }
-
-    .hero>* {
-        grid-area: stack;
-    } */
 
     body .hero-image {
         grid-column: 1 / -1;
@@ -180,6 +169,19 @@
         contain: paint;
     }
 
+    .history-block-right {
+        position: relative;
+    }
+
+    .history-block-right h3 {
+        position: absolute;
+        inset: var(--spacer-small) auto auto;
+        margin-inline: var(--spacer-xxl);
+        padding: var(--spacer-small) var(--spacer);
+        color: var(--secondary-color);
+        background: var(--accent-1-transparent);
+    }
+
     .reduced-width {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
@@ -201,9 +203,6 @@
     }
 
     /* gallery page */
-    .bento-container {
-        container: bento / inline-size;
-    }
 
     /* contact page */
     .flex-map {
@@ -221,7 +220,7 @@
     }
 
     .flex-map iframe {
-        width: clamp(300px, 80vw, 600px);
+        inline-size: clamp(300px, 80vw, 600px);
     }
 
     /* champions page */
@@ -233,7 +232,7 @@
 
     .champions-container article {
         position: relative;
-        height: 500px;
+        block-size: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -243,8 +242,6 @@
         background: var(--accent-2-light);
         padding-block: var(--spacer);
     }
-
-
 }
 
 @layer typography {
@@ -269,6 +266,7 @@
     .hero p {
         font-family: 'Amarante', 'Arial', sans-serif;
         font-weight: bold;
+        font-size: clamp(1rem, 1.2vw + 0.7rem, 1.4rem);
         margin-inline: auto;
         padding: var(--spacer-small) var(--spacer-xl);
         color: var(--secondary-color);
@@ -276,7 +274,7 @@
     }
 
     :not(footer, .feature-card)>p {
-        max-width: 75ch;
+        max-inline-size: 75ch;
     }
 }
 
@@ -289,7 +287,7 @@
     }
 
     nav a:hover {
-        color: var(--accent-1-light);
+        color: var(--accent-2);
         transition: color 0.3s ease;
     }
 
@@ -312,8 +310,8 @@
         position: absolute;
         content: "";
         top: 20px;
-        width: var(--spacer-xl);
-        height: var(--spacer-small);
+        inline-size: var(--spacer-xl);
+        block-size: var(--spacer-small);
         border-radius: 1in;
         background: var(--accent-1);
         margin-right: .5em;
@@ -350,8 +348,8 @@
     }
 
     .history-block-right img {
-        width: 100%;
-        height: 100%;
+        inline-size: 100%;
+        block-size: 100%;
         object-fit: cover;
     }
 
@@ -364,14 +362,14 @@
     }
 
     .two-halves .image-half {
-        min-height: 450px;
-        height: clamp(450px, 80vw, 600px);
+        min-block-size: 450px;
+        block-size: clamp(450px, 80vw, 600px);
         contain: paint;
     }
 
     .two-halves .image-half img {
-        width: 100%;
-        height: 100%;
+        inline-size: 100%;
+        block-size: 100%;
         object-fit: cover;
     }
 
@@ -388,8 +386,8 @@
     }
 
     .card .card-image {
-        width: 100%;
-        height: 200px;
+        inline-size: 100%;
+        block-size: 200px;
         object-fit: cover;
     }
 
@@ -409,8 +407,8 @@
     }
 
     .circuit-card img {
-        width: 100%;
-        height: 100%;
+        inline-size: 100%;
+        block-size: 100%;
         object-fit: cover;
     }
 
@@ -449,7 +447,6 @@
     }
 
     form {
-        margin-block: var(--spacer);
         border: 1px solid var(--grey);
         border-radius: var(--spacer-small);
     }
@@ -460,6 +457,26 @@
 
     fieldset label {
         margin-inline-start: var(--spacer-small);
+    }
+
+    .video-block {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    .video-block>* {
+        grid-column: 2;
+    }
+
+    .video-block video {
+        display: block;
+        margin: 0 auto;
+        inline-size: clamp(250px, 60vw, 900px);
+        border-radius: var(--card-radius);
+    }
+
+    .splitter {
+        block-size: 100px;
     }
 
     /* champions page */
@@ -492,7 +509,7 @@
     .timeline-line {
         position: fixed;
         inset: 0 auto 0 20%;
-        width: 4px;
+        inline-size: 4px;
         background: linear-gradient(to bottom,
                 oklch(from var(--accent-1-light) l c h / .2),
                 oklch(from var(--accent-1) l c h / .6),
@@ -581,6 +598,18 @@ nav a.material-icons {
 }
 
 @media (width >=768px) {
+    nav a {
+        font-size: 1.5rem;
+    }
+
+    nav a.material-icons {
+        font-size: 2.5rem;
+    }
+
+    li.nav-checked::before {
+        top: 28px;
+    }
+
 
     /* main page */
     .two-halves {
@@ -627,6 +656,8 @@ nav a.material-icons {
 
 @media (width >=900px) {
 
+
+
     /* champions page */
     .timeline-line {
         left: 50%;
@@ -634,7 +665,7 @@ nav a.material-icons {
     }
 
     .champions-container article {
-        height: 50vh;
+        block-size: 50vh;
     }
 
     .rider-card {
@@ -654,16 +685,17 @@ nav a.material-icons {
         display: block;
         position: absolute;
         inset: auto 50% auto 50%;
-        width: 20px;
-        height: 20px;
+        inline-size: 20px;
+        block-size: 20px;
         background: #ff0000;
         border-radius: 50%;
-        transform: translate(-50%) scale(0);
+        transform: translate(-50%);
+        scale: 0;
         box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-        z-index: 10;
         animation: dotPulse 1s ease-out forwards;
         animation-timeline: view();
         animation-range: entry 20% cover 50%;
+        z-index: 10;
     }
 }
 
@@ -693,17 +725,18 @@ nav a.material-icons {
 @keyframes riderCardScale {
     from {
         opacity: 0;
-        transform: scale(0.25);
+        scale: .25;
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        scale: 1;
     }
 }
 
 @keyframes dotPulse {
     to {
-        transform: translateX(-50%)scale(1);
+        transform: translateX(-50%);
+        scale: 1;
     }
 }
