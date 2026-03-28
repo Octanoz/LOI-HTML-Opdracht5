@@ -140,7 +140,7 @@
     }
 
     /* Main Page */
-    .feature-container {
+    #feature-container {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -148,12 +148,12 @@
         margin: -4.5rem var(--spacer-xl) var(--spacer);
     }
 
-    .gradient-block {
+    #gradient-block {
         padding-block: var(--spacer-large);
         background: linear-gradient(90deg, var(--grey) 33%, var(--accent-2) 0);
     }
 
-    .reversed-gradient-block {
+    #reversed-gradient-block {
         padding-block: var(--spacer-large);
         background: linear-gradient(90deg, var(--accent-2) 66%, var(--grey) 0);
     }
@@ -182,12 +182,12 @@
         background: var(--accent-1-transparent);
     }
 
-    .reduced-width {
+    #reduced-width {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
     }
 
-    .reduced-width>* {
+    #reduced-width>* {
         grid-column: 2;
     }
 
@@ -224,13 +224,13 @@
     }
 
     /* Champions Page */
-    .champions-container {
+    #champions-container {
         position: relative;
         margin: 0 auto;
         padding: var(--spacer-xxl) 0 10em;
     }
 
-    .champions-container article {
+    #champions-container article {
         position: relative;
         block-size: 500px;
         display: flex;
@@ -353,7 +353,7 @@
         object-fit: cover;
     }
 
-    .two-halves .text-half {
+    #two-halves .text-half {
         display: flex;
         flex-direction: column;
         gap: var(--spacer);
@@ -361,19 +361,19 @@
         padding: var(--spacer);
     }
 
-    .two-halves .image-half {
+    #two-halves .image-half {
         min-block-size: 450px;
         block-size: clamp(450px, 80vw, 600px);
         contain: paint;
     }
 
-    .two-halves .image-half img {
+    #two-halves .image-half img {
         inline-size: 100%;
         block-size: 100%;
         object-fit: cover;
     }
 
-    .reduced-width ul {
+    #reduced-width ul {
         list-style: disc inside;
         margin-block: var(--spacer);
     }
@@ -589,12 +589,12 @@ nav a.material-icons {
 @media (width >=500px) {
 
     /* Contact Page */
-    .contact-form {
+    #contact-form {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
     }
 
-    .contact-form>* {
+    #contact-form>* {
         grid-column: 2;
     }
 }
@@ -612,20 +612,20 @@ nav a.material-icons {
         top: 28px;
     }
 
-
     /* Main Page */
-    .two-halves {
+    #two-halves {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
     }
 
-    .two-halves :nth-child(3) {
+    /* reverse order */
+    #two-halves :nth-child(3) {
         grid-column: 2;
         grid-row: 2;
     }
 
-    .two-halves :nth-child(4) {
+    #two-halves :nth-child(4) {
         grid-column: 1;
         grid-row: 2;
     }
@@ -658,16 +658,18 @@ nav a.material-icons {
 
 @media (width >=900px) {
 
-
-
     /* Champions Page */
     .timeline-line {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .champions-container article {
-        block-size: 50vh;
+    .champions-header {
+        padding-block-end: calc(var(--spacer-xxl) * 2);
+    }
+
+    #champions-container article {
+        block-size: 35vh;
     }
 
     .rider-card {
